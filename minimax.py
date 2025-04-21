@@ -87,7 +87,6 @@ def negamax(
     transp[estado] = (v, d)
     return [mejor] + mejores, v 
 
-
 def jugador_negamax(
     juego, estado, jugador, ordena=None, d=None, evalua=None
     ):
@@ -100,7 +99,6 @@ def jugador_negamax(
         alpha=-1e10, beta=1e10, ordena=ordena, d=d, 
         evalua=evalua, transp={}, traza=[])
     return traza[0]
-
 
 def minimax_iterativo(
     juego, estado, jugador, tiempo=10,

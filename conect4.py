@@ -3,7 +3,6 @@ Juego de conecta 4
 
 El estado se va a representar como una lista de 42 elementos, tal que
 
-
 0  1  2  3  4  5  6
 7  8  9 10 11 12 13
 14 15 16 17 18 19 20
@@ -23,7 +22,6 @@ fichas.
 
 La ganancia es 1 si gana el jugador 1, -1 si gana el jugador 2 y 0 si es un
 empate.
-
 """
 
 from juegos_simplificado import ModeloJuegoZT2
@@ -146,8 +144,6 @@ def evalua_3con(s):
         print("ERROR, evaluación fuera de rango --> ", promedio)
     return promedio
 
-
-    
 if __name__ == '__main__':
 
     modelo = Conecta4()
@@ -187,5 +183,3 @@ if __name__ == '__main__':
         print("Gana el jugador " + " XO"[g])
     else:
         print("Empate")
-    
-    
