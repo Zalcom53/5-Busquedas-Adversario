@@ -87,6 +87,11 @@ def ordena_othello(jugadas, jugador, s):
         return volteados
     return sorted(jugadas, key=clave, reverse=True)
 
+def make_ordena_othello(s):
+    def ordena(jugadas, jugador):
+        return ordena_othello(jugadas, jugador, s)
+    return ordena
+
 def evalua_othello(s):
     count1 = s.count(1)
     count2 = s.count(-1)
@@ -121,7 +126,7 @@ if __name__ == "__main__":
             print([1 if x == 1 else -1 if x == -1 else '.' for x in row])
 
     juego = Othello()
-    jugador_ia = lambda juego, s, j: minimax_iterativo(juego, s, j, tiempo=10, ordena=ordena_othello, evalua=evalua_othello)
+    jugador_ia = lambda juego, s, j: minimax_iterativo(juego, s, j, tiempo=10, ordena=make_ordena_othello(s), evalua=evalua_othello)
     resultado, estado_final = juega_dos_jugadores(juego, jugador_manual_othello, jugador_ia)
     print("Resultado (ganancia para jugador 1):", resultado)
     print("Tablero final:")
